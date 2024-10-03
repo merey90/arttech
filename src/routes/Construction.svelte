@@ -11,8 +11,11 @@
 				<img src={ConstructionImage} alt="Site Under Construction" />
 			</div>
 			<div class="message-container">
-				<h2>Site Under Construction</h2>
-				<p>We're working hard to bring you an amazing experience. Please check back soon!</p>
+				<h2>Site under construction</h2>
+				<p>
+					Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website.
+					Check back soon to see what's blooming! 🌸
+				</p>
 			</div>
 		</div>
 	</div>
@@ -25,11 +28,15 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black backdrop */
+		background-color: rgba(0, 0, 0, 0.7);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		z-index: 1000; /* Ensure it's on top of other elements */
+		z-index: 1000;
+
+		backdrop-filter: blur(5px);
+		/* Add blur effect */
+		-webkit-backdrop-filter: blur(5px); /* For Safari support */
 	}
 
 	.construction-container {
