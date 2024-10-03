@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Construction from './Construction.svelte';
+
 	let activeElement: string | null = null;
 
 	const handleClick = (element: string) => {
@@ -11,6 +13,7 @@
 	<meta name="description" content="Home page" />
 </svelte:head>
 
+<Construction show={true} />
 <div class="container">
 	<button class="body-part" on:click={() => handleClick('eyes')}>
 		<div class="line"></div>
