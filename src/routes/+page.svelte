@@ -47,7 +47,7 @@
 		justify-content: center;
 		align-items: center;
 		min-height: 100vh;
-		background-image: url('src/lib/images/main.png');
+		background-image: url('$lib/images/main.png');
 		background-size: cover;
 		background-position: center;
 		flex-direction: column;
