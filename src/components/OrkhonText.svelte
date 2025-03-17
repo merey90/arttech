@@ -144,8 +144,8 @@
 
 <!-- We wrap all letters in a container with white-space: pre
      so that spaces are preserved as-is. -->
-<div class="orkhon-text">
+<span class="orkhon-text">
 	{#each displayChars as char}
 		{char}
 	{/each}
-</div>
+</span>
