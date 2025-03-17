@@ -14,7 +14,14 @@
 </svelte:head>
 
 <Construction show={true} />
-<div class="container">
+<video autoplay loop muted playsinline>
+	<source
+		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/The%20Whisper%20Of%20The%20Wind.mp4?alt=media"
+		type="video/mp4"
+	/>
+</video>
+
+<!-- <div class="container">
 	<button class="body-part" on:click={() => handleClick('eyes')}>
 		<div class="line"></div>
 		<div class="label">See</div>
@@ -39,7 +46,7 @@
 		<div class="line"></div>
 		<div class="label">Follow</div>
 	</button>
-</div>
+</div> -->
 
 <style>
 	.container {
@@ -47,7 +54,7 @@
 		justify-content: center;
 		align-items: center;
 		min-height: 100vh;
-		background-image: url('$lib/images/main.png');
+		/* background-image: url('$lib/images/main.png'); */
 		background-size: cover;
 		background-position: center;
 		flex-direction: column;
