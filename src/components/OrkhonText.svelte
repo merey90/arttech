@@ -2,9 +2,9 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	// Props
-	export let text: string = 'Hello, Svelte!';
-	export let intervalTime: number = 50; // How often to update the runes (ms)
-	export let totalTime: number = 2000; // How long until we reveal the text (ms)
+	export let text: string = 'Hello 🌱🌸 Svelte!';
+	export let intervalTime: number = 50; // ms between random updates
+	export let totalTime: number = 2000; // ms until revealing real text
 
 	// Full set of Orkhon runes
 	const orkhonRunes: string[] = [
@@ -83,31 +83,69 @@
 		'𐱈'
 	];
 
-	let displayText: string = '';
+	// We'll hold the currently displayed characters here
+	let displayChars: string[] = [];
+
 	let interval: number | undefined;
+
+	// Helper to detect emojis (we'll allow all Extended Pictographic codepoints)
+	// Modern browsers support this Unicode property-based regex:
+	function isEmoji(char: string): boolean {
+		// If your environment lacks full Unicode regex support, see alternative approaches.
+		return /\p{Extended_Pictographic}/u.test(char);
+	}
+
+	// Return a random Orkhon rune
+	function getRandomRune(): string {
+		return orkhonRunes[Math.floor(Math.random() * orkhonRunes.length)];
+	}
 
 	onMount(() => {
 		const start = Date.now();
 
+		// Initialize displayChars
+		displayChars = text.split('').map((ch) => {
+			if (ch === ' ' || isEmoji(ch)) {
+				// Keep spaces and emojis from the start
+				return ch;
+			}
+			// Everything else is replaced with a random rune
+			return getRandomRune();
+		});
+
+		// Update runes on interval until totalTime elapses
 		interval = window.setInterval(() => {
-			if (Date.now() - start >= totalTime) {
-				displayText = text; // Reveal the actual text
+			const elapsed = Date.now() - start;
+			if (elapsed >= totalTime) {
+				// Reveal the actual text
+				displayChars = text.split('');
 				clearInterval(interval);
 			} else {
-				// For each non-space character, display a random rune
-				displayText = text
-					.split('')
-					.map((char) =>
-						char === ' ' ? ' ' : orkhonRunes[Math.floor(Math.random() * orkhonRunes.length)]
-					)
-					.join('');
+				// Keep re-randomizing for non-space, non-emoji characters
+				displayChars = displayChars.map((current, i) => {
+					const original = text[i];
+					// If space or emoji, do not randomize
+					if (original === ' ' || isEmoji(original)) {
+						return original;
+					}
+					// Otherwise randomize
+					return getRandomRune();
+				});
 			}
 		}, intervalTime);
 	});
 
 	onDestroy(() => {
-		if (interval) clearInterval(interval);
+		if (interval !== undefined) {
+			clearInterval(interval);
+		}
 	});
 </script>
 
-<span>{displayText}</span>
+<!-- We wrap all letters in a container with white-space: pre
+     so that spaces are preserved as-is. -->
+<div class="orkhon-text">
+	{#each displayChars as char}
+		{char}
+	{/each}
+</div>
