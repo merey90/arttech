@@ -16,7 +16,11 @@
 <Construction show={true} />
 <video autoplay loop muted playsinline>
 	<source
-		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/The%20Whisper%20Of%20The%20Wind.mp4?alt=media"
+		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/background.webm?alt=media"
+		type="video/webm"
+	/>
+	<source
+		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/background.mp4?alt=media"
 		type="video/mp4"
 	/>
 </video>
@@ -49,12 +53,21 @@
 </div> -->
 
 <style>
-	.container {
+	video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw; /* 100% of the viewport width */
+		height: 100vh; /* 100% of the viewport height */
+		object-fit: cover; /* Maintains aspect ratio, may crop */
+		z-index: -1; /* Places video in the background */
+	}
+	/* .container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		min-height: 100vh;
-		/* background-image: url('$lib/images/main.png'); */
+		background-image: url('$lib/images/main.png');
 		background-size: cover;
 		background-position: center;
 		flex-direction: column;
@@ -93,5 +106,5 @@
 
 	.body-part:hover .label {
 		opacity: 1;
-	}
+	} */
 </style>

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import OrkhonText from '../components/OrkhonText.svelte';
-	import ConstructionImage from '$lib/images/construction.png';
 
 	export let show: boolean = true; // Prop to control the visibility of the component
 </script>
@@ -9,19 +8,19 @@
 	<div class="construction-overlay">
 		<div class="construction-container">
 			<div class="message-container">
-				<h2><OrkhonText text="Site under construction" intervalTime={100} totalTime={500} /></h2>
+				<h2><OrkhonText text="Site under construction" intervalTime={50} totalTime={1000} /></h2>
 				<p>
 					<OrkhonText
 						text="Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website."
 						intervalTime={50}
-						totalTime={1000}
+						totalTime={2000}
 					/>
 				</p>
 				<p>
 					<OrkhonText
 						text="Check back soon to see what's blooming! 🌸"
 						intervalTime={50}
-						totalTime={1000}
+						totalTime={4000}
 					/>
 				</p>
 			</div>
@@ -57,7 +56,7 @@
 
 	h2 {
 		margin-bottom: 10px;
-		font-family: 'Lucida console', serif;
+		font-family: 'Roboto', serif;
 		font-size: 2.5em;
 		font-weight: 700;
 		letter-spacing: 2px;
@@ -66,7 +65,7 @@
 	}
 
 	p {
-		font-family: 'Lucida console', sans-serif;
+		font-family: 'Roboto', sans-serif;
 		font-size: 1.2em;
 		line-height: 1.6;
 		color: rgb(176, 252, 89);
