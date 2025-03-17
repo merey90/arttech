@@ -56,7 +56,7 @@
 
 	h2 {
 		margin-bottom: 10px;
-		font-family: 'Lucida console', 'Noto Color Emoji', sans-serif;
+		font-family: 'Lucida console', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 		font-size: 2.5em;
 		font-weight: 700;
 		letter-spacing: 2px;
@@ -65,7 +65,7 @@
 	}
 
 	p {
-		font-family: 'Lucida console', 'Noto Color Emoji', sans-serif;
+		font-family: 'Lucida console', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 		font-size: 1.2em;
 		line-height: 1.6;
 		color: rgb(176, 252, 89);
