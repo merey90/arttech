@@ -14,9 +14,12 @@
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
 	color: var(--color-text);
+	--primary-color: #2c3e50; /* Example color */
+	--secondary-color: #e74c3c; /* Example color */
 }
 
 body {
+	font-family: 'Roboto', sans-serif;
 	min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
