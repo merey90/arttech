@@ -13,7 +13,7 @@
 					<OrkhonText
 						text="Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website."
 						intervalTime={50}
-						totalTime={2000}
+						totalTime={4000}
 					/>
 				</p>
 				<p>
@@ -56,7 +56,7 @@
 
 	h2 {
 		margin-bottom: 10px;
-		font-family: 'Roboto', serif;
+		font-family: 'Lucida console', 'Noto Color Emoji', sans-serif;
 		font-size: 2.5em;
 		font-weight: 700;
 		letter-spacing: 2px;
@@ -65,7 +65,7 @@
 	}
 
 	p {
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Lucida console', 'Noto Color Emoji', sans-serif;
 		font-size: 1.2em;
 		line-height: 1.6;
 		color: rgb(176, 252, 89);
