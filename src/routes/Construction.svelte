@@ -11,14 +11,8 @@
 				<h2><OrkhonText text="Site under construction" intervalTime={50} totalTime={1000} /></h2>
 				<p>
 					<OrkhonText
-						text="Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website."
-						intervalTime={50}
-						totalTime={4000}
-					/>
-				</p>
-				<p>
-					<OrkhonText
-						text="Check back soon to see what's blooming! 🌸"
+						text="Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website.
+Check back soon to see what's blooming! 🌸"
 						intervalTime={50}
 						totalTime={4000}
 					/>
