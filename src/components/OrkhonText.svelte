@@ -144,8 +144,22 @@
 
 <!-- We wrap all letters in a container with white-space: pre
      so that spaces are preserved as-is. -->
-<span class="orkhon-text">
+<div class="orkhon-text">
 	{#each displayChars as char}
-		{char}
+		<span class="letter">{char}</span>
 	{/each}
-</span>
+</div>
+
+<style>
+	.orkhon-text {
+		white-space: pre-wrap;
+		overflow-wrap: break-word;
+		max-width: 100%;
+	}
+
+	.letter {
+		display: inline-block;
+		width: 1ch;
+		text-align: center;
+	}
+</style>

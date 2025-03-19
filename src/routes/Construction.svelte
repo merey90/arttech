@@ -40,9 +40,9 @@
 				<h2>
 					<OrkhonText text="ArtTech Garden" intervalTime={50} totalTime={1000} />
 				</h2>
-				<p class="description">
+				<div class="description">
 					<OrkhonText text={descriptionText} intervalTime={50} totalTime={4000} />
-				</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -77,6 +77,10 @@
 
 	.description {
 		line-height: 30px;
+		font-family: 'Lucida console', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+		font-size: 1.2em;
+		line-height: 1.6;
+		color: rgb(176, 252, 89);
 	}
 
 	h2 {
@@ -87,12 +91,6 @@
 		letter-spacing: 2px;
 		color: rgb(176, 252, 89);
 		padding-bottom: 15px;
-	}
-
-	p {
-		font-family: 'Lucida console', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
-		font-size: 1.2em;
-		line-height: 1.6;
-		color: rgb(176, 252, 89);
+		line-height: 1.8;
 	}
 </style>
