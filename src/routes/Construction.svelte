@@ -1,21 +1,45 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
 	import OrkhonText from '../components/OrkhonText.svelte';
 
-	export let show: boolean = true; // Prop to control the visibility of the component
+	export let show: boolean = true;
+
+	// Create a writable store for window width
+	const windowWidth = writable(browser ? window.innerWidth : 0);
+
+	// Function to update store on resize
+	const updateWidth = () => {
+		if (browser) {
+			windowWidth.set(window.innerWidth);
+		}
+	};
+
+	// Set up event listener
+	onMount(() => {
+		if (browser) {
+			window.addEventListener('resize', updateWidth);
+			updateWidth(); // Set initial value
+			return () => window.removeEventListener('resize', updateWidth);
+		}
+	});
+
+	// Reactive variables
+	$: isMobile = $windowWidth < 768;
+
+	$: description = isMobile
+		? "Our garden is still growing! We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming!"
+		: "Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming! 🌸";
 </script>
 
 {#if show}
 	<div class="construction-overlay">
-		<div class="construction-container">
+		<div class="construction-container {isMobile ? 'mobile' : ''}">
 			<div class="message-container">
 				<h2><OrkhonText text="Site under construction" intervalTime={50} totalTime={1000} /></h2>
 				<p>
-					<OrkhonText
-						text="Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website.
-Check back soon to see what's blooming! 🌸"
-						intervalTime={50}
-						totalTime={4000}
-					/>
+					<OrkhonText text={description} intervalTime={50} totalTime={1000} />
 				</p>
 			</div>
 		</div>
@@ -29,7 +53,6 @@ Check back soon to see what's blooming! 🌸"
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -37,11 +60,13 @@ Check back soon to see what's blooming! 🌸"
 	}
 
 	.construction-container {
-		background-color: rgba(0, 0, 0, 0.5);
 		padding: 20px;
 		border-radius: 5px;
 		display: flex;
 		max-width: 1000px;
+		&:not(.mobile) {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 	}
 
 	.message-container {
