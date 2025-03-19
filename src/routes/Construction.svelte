@@ -28,7 +28,7 @@
 	// Reactive variables
 	$: isMobile = $windowWidth < 768;
 
-	$: description = isMobile
+	$: descriptionText = isMobile
 		? "Our garden is still growing! We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming!"
 		: "Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming! 🌸";
 </script>
@@ -39,7 +39,7 @@
 			<div class="message-container">
 				<h2><OrkhonText text="Site under construction" intervalTime={50} totalTime={1000} /></h2>
 				<p>
-					<OrkhonText text={description} intervalTime={50} totalTime={4000} />
+					<OrkhonText text={descriptionText} intervalTime={50} totalTime={1000} />
 				</p>
 			</div>
 		</div>
@@ -71,6 +71,7 @@
 
 	.message-container {
 		text-align: center;
+		min-height: 350px;
 	}
 
 	h2 {
