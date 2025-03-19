@@ -37,9 +37,11 @@
 	<div class="construction-overlay">
 		<div class="construction-container {isMobile ? 'mobile' : ''}">
 			<div class="message-container">
-				<h2><OrkhonText text="Site under construction" intervalTime={50} totalTime={1000} /></h2>
-				<p>
-					<OrkhonText text={descriptionText} intervalTime={50} totalTime={1000} />
+				<h2>
+					<OrkhonText text="ArtTech Garden" intervalTime={50} totalTime={1000} />
+				</h2>
+				<p class="description">
+					<OrkhonText text={descriptionText} intervalTime={50} totalTime={4000} />
 				</p>
 			</div>
 		</div>
@@ -71,7 +73,10 @@
 
 	.message-container {
 		text-align: center;
-		min-height: 350px;
+	}
+
+	.description {
+		line-height: 30px;
 	}
 
 	h2 {
