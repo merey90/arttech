@@ -39,7 +39,7 @@
 			<div class="message-container">
 				<h2><OrkhonText text="Site under construction" intervalTime={50} totalTime={1000} /></h2>
 				<p>
-					<OrkhonText text={description} intervalTime={50} totalTime={1000} />
+					<OrkhonText text={description} intervalTime={50} totalTime={4000} />
 				</p>
 			</div>
 		</div>
