@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Construction from './Construction.svelte';
+	import background from './background.jpg';
 
 	let activeElement: string | null = null;
 
@@ -14,13 +15,17 @@
 </svelte:head>
 
 <Construction show={true} />
-<video autoplay loop muted playsinline>
+<video autoplay loop muted playsinline preload="auto" poster={background}>
 	<source
 		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/background.webm?alt=media"
 		type="video/webm"
 	/>
 	<source
-		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/background.mp4?alt=media"
+		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/background-265.mp4?alt=media"
+		type="video/mp4"
+	/>
+	<source
+		src="https://firebasestorage.googleapis.com/v0/b/arttech-4d36f.firebasestorage.app/o/background-264.mp?alt=media"
 		type="video/mp4"
 	/>
 </video>
