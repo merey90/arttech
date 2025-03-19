@@ -67,6 +67,12 @@
 		object-fit: cover; /* Maintains aspect ratio, may crop */
 		z-index: -1; /* Places video in the background */
 	}
+
+	@media (max-width: 768px) {
+		video {
+			object-position: left; /* Aligns video to the left side */
+		}
+	}
 	/* .container {
 		display: flex;
 		justify-content: center;
