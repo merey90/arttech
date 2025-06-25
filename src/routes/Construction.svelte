@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	import OrkhonText from '../components/OrkhonText.svelte';
+	import ProjectList from '../components/ProjectList.svelte';
 
 	export let show: boolean = true;
 
@@ -28,9 +29,8 @@
 	// Reactive variables
 	$: isMobile = $windowWidth < 768;
 
-	$: descriptionText = isMobile
-		? "Our garden is still growing! We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming!"
-		: "Our garden is still growing! 🌱 We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming! 🌸";
+	$: descriptionText =
+		"Our garden is still growing! We're busy planting the seeds for a beautiful website. \nCheck back soon to see what's blooming!";
 </script>
 
 {#if show}
@@ -45,11 +45,17 @@
 				</div>
 			</div>
 		</div>
+		<div class="construction-container {isMobile ? 'mobile' : ''}">
+			<div class="message-container">
+				<ProjectList />
+			</div>
+		</div>
 	</div>
 {/if}
 
 <style>
 	.construction-overlay {
+		overflow-y: auto;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -59,6 +65,7 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 1000;
+		flex-direction: column;
 	}
 
 	.construction-container {
@@ -69,6 +76,7 @@
 		&:not(.mobile) {
 			background-color: rgba(0, 0, 0, 0.5);
 		}
+		margin-bottom: 20px;
 	}
 
 	.message-container {
