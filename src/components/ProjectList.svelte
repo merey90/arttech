@@ -49,15 +49,17 @@ Creation of immersive, multimodal environments that combine sound, visual media,
 		</p>
 	</section>
 	<section class="project">
-		<h3>Email</h3>
-		<a href="mailto:artechgarden23@gmail.com">artechgarden23@gmail.com</a>
+		<p>
+			If you have any questions or inquiries, please contact the team at <a
+				href="mailto:artechgarden23@gmail.com">artechgarden23@gmail.com</a
+			>
+		</p>
 	</section>
 </div>
 
 <style>
 	.project-list {
 		text-align: left;
-		width: 100%;
 		margin: 0 auto;
 		padding: 20px;
 		font-family: 'Lucida console', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
