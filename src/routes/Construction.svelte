@@ -55,28 +55,28 @@
 
 <style>
 	.construction-overlay {
-		overflow-y: auto;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		width: 100vw;
+		height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 1000;
 		flex-direction: column;
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 
 	.construction-container {
 		padding: 20px;
 		border-radius: 5px;
 		display: flex;
-		max-width: 1000px;
 		&:not(.mobile) {
 			background-color: rgba(0, 0, 0, 0.5);
 		}
-		margin-bottom: 20px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		max-width: 800px;
 	}
 
 	.message-container {
@@ -84,7 +84,6 @@
 	}
 
 	.description {
-		line-height: 30px;
 		font-family: 'Lucida console', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 		font-size: 1.2em;
 		line-height: 1.6;
