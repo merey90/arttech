@@ -36,7 +36,7 @@
 	<section class="project">
 		<p>
 			If you have any questions or inquiries, please contact the team at <a
-				href="mailto:artechgarden23@gmail.com">artechgarden23@gmail.com</a
+				href="mailto:arttechgarden23@gmail.com">arttechgarden23@gmail.com</a
 			>
 		</p>
 	</section>
